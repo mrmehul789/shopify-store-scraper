@@ -1,0 +1,14 @@
+# shopify_scraper.py runs on the Python standard library alone — nothing here
+# is strictly required. Installing these optional HTTP clients dramatically
+# improves success rates against bot-protected / Cloudflare-fronted stores.
+#
+#   pip install -r requirements.txt
+#
+# The scraper auto-detects whichever of these is present and falls back through
+# them in order: curl_cffi -> tls_client -> httpx -> urllib (stdlib).
+
+curl_cffi>=0.7          # recommended: real Chrome TLS fingerprint (best coverage)
+httpx>=0.27             # modern HTTP/2 client used as a secondary fallback
+
+# Optional third TLS-impersonation client (uncomment to enable):
+# tls-client>=1.0
